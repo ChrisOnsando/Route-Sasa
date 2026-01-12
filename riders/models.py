@@ -16,7 +16,7 @@ class Rider(models.Model):
         ('OFFLINE', 'Offline'),
     ]
     
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='rider_profile')
     phone_number = models.CharField(max_length=20, unique=True)
     
     vehicle_type = models.CharField(max_length=20, choices=VEHICLE_TYPES, default='MOTORCYCLE')
